@@ -164,7 +164,7 @@ moviesCast <- movies%>%
 View(moviesCast)
 mostPopActor <- names(which.max(table(moviesCast$Cast.)))
 
-moviesActor <- moviesCast%>%filter(Cast.==mostPopActor)%>%collect()
+moviesActor <- moviesCast%>%filter(Cast.==mostPopActor)%>%collect() 
 ?count
 actorsList <-  moviesCast%>% group_by(Cast.)%>%tally(sort = TRUE)%>%na.omit()
 actorsList[1:10,] #top 10 actors who are present most often in the cast of Netflix movie library
